@@ -1,0 +1,17 @@
+
+$transaction->customerDetails->id
+$transaction->customerDetails->firstName
+$transaction->customerDetails->lastName
+$transaction->customerDetails->email
+$transaction->customerDetails->company
+$transaction->customerDetails->website
+$transaction->customerDetails->phone
+$transaction->customerDetails->fax
+
+
+$transaction->id
+$transaction->type
+$transaction->amount
+$transaction->status
+$transaction->createdAt->format('Y-m-d H:i:s')
+$transaction->updatedAt->format('Y-m-d H:i:s')
