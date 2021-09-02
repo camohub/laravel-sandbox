@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/lurity-gateway', 'LurityPaymentGatewayController@index')->name('gateway');
-Route::get('/lurity-checkout', 'LurityPaymentGatewayController@checkout')->name('gateway-checkout');
+Route::post('/lurity-checkout', 'LurityPaymentGatewayController@checkout')->name('gateway-checkout');
 Route::get('/lurity-transaction/{id}', 'LurityPaymentGatewayController@transaction')->name('gateway-transaction');
 Route::get('/lurity-gateway-client-token', 'LurityPaymentGatewayController@clientToken')->name('gateway-client-token');
 
