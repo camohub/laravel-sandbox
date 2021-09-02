@@ -42,10 +42,9 @@ class LurityPaymentGatewayController extends Controller
 
 	public function checkout(Request $request)
 	{
-		Log::debug($_POST);
 		$gateway = $this->createGateway();
 
-		$amount = number_format(float($request->get('amount')), 2, '.', '');
+		$amount = number_format((float)$request->get('amount'), 2, '.', '');
 		$paymentMethodNonce = $request->get('payment_method_nonce');
 
 		$result = $gateway->transaction()->sale([
