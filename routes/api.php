@@ -24,4 +24,4 @@ Route::post('/lurity-checkout', 'LurityPaymentGatewayController@checkout')->name
 Route::get('/lurity-transaction/{id}', 'LurityPaymentGatewayController@transaction')->name('gateway-transaction');
 Route::get('/lurity-gateway-client-token', 'LurityPaymentGatewayController@clientToken')->name('gateway-client-token');
 
-
+Route::get('/lurity-orsr-api/{ico}', 'LurityORSRController@index')->name('orsr-api');
