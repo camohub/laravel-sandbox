@@ -50,7 +50,6 @@ class LurityPaymentGatewayController extends Controller
 		$result = $gateway->transaction()->sale([
 			'amount' => $amount,
 			'paymentMethodNonce' => $paymentMethodNonce,
-			//'deviceData' => $deviceDataFromTheClient,
 			'options' => [
 				'submitForSettlement' => True
 			]
@@ -63,7 +62,6 @@ class LurityPaymentGatewayController extends Controller
 		}
 		else
 		{
-
 			$errors = [];
 			foreach($result->errors->deepAll() as $error) $errors[] = "Error: {$error->code}: {$error->message}.";
 
@@ -92,6 +90,14 @@ class LurityPaymentGatewayController extends Controller
 			]);
 		}
 	}
+
+  /**
+   * Braintree payment method delete webhook.
+   */
+  public function paymentDelete(Request $request)
+  {
+    Log::debug($_POST);
+  }
 
 
 	protected function createGateway()
