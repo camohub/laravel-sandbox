@@ -23,6 +23,6 @@ Route::get('/lurity-gateway', 'LurityPaymentGatewayController@index')->name('gat
 Route::post('/lurity-checkout', 'LurityPaymentGatewayController@checkout')->name('gateway-checkout');
 Route::get('/lurity-transaction/{id}', 'LurityPaymentGatewayController@transaction')->name('gateway-transaction');
 Route::get('/lurity-gateway-client-token', 'LurityPaymentGatewayController@clientToken')->name('gateway-client-token');
-Route::get('/lurity-payment-delete', 'LurityPaymentGatewayController@paymentDelete')->name('gateway-payment-delete');
+Route::post('/lurity-payment-delete', 'LurityPaymentGatewayController@paymentDelete')->name('gateway-payment-delete');
 
 Route::get('/lurity-orsr/{ico}', 'LurityORSRController@index')->name('orsr-api');
